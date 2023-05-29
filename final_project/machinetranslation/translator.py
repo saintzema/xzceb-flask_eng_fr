@@ -20,13 +20,13 @@ def english_to_french(english_text):
 
     language_translator.set_service_url('{url}')
 
-    french_text = language_translator.translate(
+    frenchtranslation = language_translator.translate(
     text='Hello, how are you today?',
     model_id='en-fr').get_result()
 
-    print(json.dumps(french_text, indent=2, ensure_ascii=False))
+    print(json.dumps(frenchtranslation, indent=2, ensure_ascii=False))
 
-    return french_text
+    return frenchtranslation.get("translations")[0].get("translation")
 
 """Function to translate French to English"""
 def french_to_english(french_text):
@@ -38,10 +38,10 @@ def french_to_english(french_text):
 
     language_translator.set_service_url(url)
 
-    english_text = language_translator.translate(
+    englishtranslation = language_translator.translate(
     text='Bonjour',
     model_id='fr-en').get_result()
 
-    print(json.dumps(french_text, indent=2, ensure_ascii=False))
+    print(json.dumps(englishtranslation, indent=2, ensure_ascii=False))
 
-    return english_text
+    return englishtranslation.get("translations")[0].get("translation")
