@@ -26,7 +26,7 @@ def english_to_french(english_text):
 
     print(json.dumps(frenchtranslation, indent=2, ensure_ascii=False))
 
-    return frenchtranslation.get("translations")[0].get("frenchtranslation")
+    return frenchtranslation.get("translations")[0].get("translation")
 
 """Function to translate French to English"""
 def french_to_english(french_text):
@@ -44,4 +44,4 @@ def french_to_english(french_text):
 
     print(json.dumps(englishtranslation, indent=2, ensure_ascii=False))
 
-    return englishtranslation.get("translations")[0].get("englishtranslation")
+    return englishtranslation.get("translations")[0].get("translation")
